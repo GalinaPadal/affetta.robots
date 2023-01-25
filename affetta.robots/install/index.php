@@ -34,7 +34,13 @@ Class affetta_robots extends CModule
     public function addUserField($id, $field_name, $name, $mandatory, $type_id = "string")
     {
         if($type_id == 'boolean'){
-            $default_value = true;
+            if($field_name== "UF_ACTIVE"){
+                $default_value = true;
+            }
+            else{
+                $default_value = false;
+            }
+
         }
 
         $oUserTypeEntity = new CUserTypeEntity();
